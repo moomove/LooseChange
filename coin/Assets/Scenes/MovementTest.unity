@@ -444,16 +444,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814541943}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f24452b9ce0a8b84da1603675a0834c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 30.8
   tilt: 1
   maxAngle: 50
   minAngle: -50
-  turnAngle: 1
+  maxSpeed: 12
+  jumpHeight: 700
 --- !u!65 &814541950
 BoxCollider:
   m_ObjectHideFlags: 0
