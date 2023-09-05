@@ -77,13 +77,13 @@ public class toggle : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 {
-                    gameObject.transform.Rotate(0, turnAngle * tilt, 0);
+                    gameObject.transform.Rotate(0, (turnAngle * tilt)*3, 0);
                 }
             }
             if (Input.GetKey(KeyCode.A))
             {
                 {
-                    gameObject.transform.Rotate(0, -(turnAngle * tilt), 0);
+                    gameObject.transform.Rotate(0, -(turnAngle * tilt)*3, 0);
                 }
             }
             if (Input.GetKey(KeyCode.S))
