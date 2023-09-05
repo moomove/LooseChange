@@ -36,7 +36,7 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.velocity.x < maxSpeed && rb.velocity.z < maxSpeed)//(Input.GetKey(KeyCode.W))
+        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)//(Input.GetKey(KeyCode.W))
         {
             rb.AddRelativeForce(Vector3.forward * speed);
         }
