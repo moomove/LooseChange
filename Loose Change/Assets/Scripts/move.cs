@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.UIElements;
 
 public class move : MonoBehaviour
@@ -26,6 +27,13 @@ public class move : MonoBehaviour
     public float maxSpeed = 12; //INSPECTOR how fast is too fast
     public float jumpHeight = 700; //INSPECTOR how high to jump
 
+    // used between update and fixed update to ensure movement is not framerate reliant
+    bool forwardMove = false;
+    bool rightMove = false;
+    bool leftMove = false;
+    bool upMove = false;
+    bool spinMove = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,32 +42,66 @@ public class move : MonoBehaviour
     }
 
     // Update is called once per frame
+    // user input is detected in update
     void Update()
     {
-        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)//(Input.GetKey(KeyCode.W))
+        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
         {
-            rb.AddRelativeForce(Vector3.forward * speed);
+            forwardMove = true;
         }
-        
+
         if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
         {
-            moveCoin(1); 
+            rightMove = true;
         }
-        
-        if (Input.GetKey(left1Input)|| Input.GetKey(left2Input)) //same as D but negative
+
+        if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
         {
-            moveCoin(-1);
+            leftMove = true;
         }
 
         if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
         {
-            Debug.Log("y velocity is " + rb.velocity.y);
-            jumpCoin(jumpHeight);
+            upMove = true;
         }
 
         if (Input.GetKeyDown(spinInput))
         {
+            spinMove = true;
+        }
+    }
+
+    // physics actions based on user input are performed in fixed update
+    private void FixedUpdate()
+    {
+        if (forwardMove)
+        {
+            //Debug.Log("moving forward! velocity is " + rb.velocity.magnitude);
+            rb.AddRelativeForce(Vector3.forward * speed);
+        }
+
+        if (rightMove)
+        {
+            moveCoin(1);
+            rightMove = false;
+        }
+
+        if (leftMove)
+        {
+            moveCoin(-1);
+            leftMove = false;
+        }
+
+        if (upMove)
+        {
+            jumpCoin(jumpHeight);
+            upMove = false;
+        }
+
+        if (spinMove)
+        {
             spinCoin(500);
+            spinMove = false;
         }
     }
 
@@ -86,17 +128,31 @@ public class move : MonoBehaviour
     void spinCoin(float jumpHeight)
     {
         jumpCoin(jumpHeight);
-        Debug.Log("spinning");
-        StartCoroutine(spinAttack());
+        //Debug.Log("spinning");
+        StartCoroutine(spinAttackCR());
     }
 
     // The spin attack visual coroutine
-    IEnumerator spinAttack()
+    IEnumerator spinAttackCR()
     {
         for (int i = 0; i < 83; i++) //83 is 3 complete spins of 13 degrees
         {
             gameObject.transform.Rotate(0, 13, 0); //odd number to offset the coin's spin
-            yield return new WaitForSeconds(.004f); 
+            yield return new WaitForSeconds(.004f);
+        }
+    }
+
+    // Gradually increase the speed of the coin
+    // increaseTime is the time between each increase
+    // increaseValue is the amount to increase
+    // by updating maxSpeed, the code in Update and FixedUpdate will speed up the coin automatically
+    IEnumerator speedIncreaseCR(float increaseTime, float increaseValue)
+    {
+        while (true) //TODO update this to "while coin is alive/level is running" OR rely on stopcoroutine to end speed increase
+        {
+            maxSpeed += increaseValue; // increase max speed of coin //potentially update speed here too if friction is too much
+            //Debug.Log("max speed is " + maxSpeed + " and velocity is " + rb.velocity.magnitude);
+            yield return new WaitForSeconds(increaseTime);
         }
     }
 }
