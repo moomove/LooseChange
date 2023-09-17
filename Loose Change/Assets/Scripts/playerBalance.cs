@@ -5,8 +5,8 @@ using UnityEngine;
 public class playerHazardBalance : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float playerCurrBalance;
-    public float fallOverDegree;
+    public float playerCurrBalance = 0;
+    public float fallOverDegree = 60;
     public GameObject movementScipt;
 
     void Start()

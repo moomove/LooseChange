@@ -22,10 +22,13 @@ public class move : MonoBehaviour
 
     public float speed = 50; //INSPECTOR acceleration speed
     public float tilt = 1; //INSPECTOR how much to tilt on button press
-    public float maxAngle = 50; //INSPECTOR maximum tilt (right)
-    public float minAngle = -50; //INSPECTOR minimum tilt (left)
     public float maxSpeed = 12; //INSPECTOR how fast is too fast
     public float jumpHeight = 700; //INSPECTOR how high to jump
+
+    public float playerCurrBalance = 0;
+    public float fallOverDegree = 60;
+
+    public float raycastDistance = 1.0f;
 
     // used between update and fixed update to ensure movement is not framerate reliant
     bool forwardMove = false;
@@ -45,30 +48,55 @@ public class move : MonoBehaviour
     // user input is detected in update
     void Update()
     {
-        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
+        if (playerCurrBalance <= -fallOverDegree || playerCurrBalance >= fallOverDegree)
         {
-            forwardMove = true;
+            //playerfalls and playerlose()
+            Debug.Log("YOU LOSE");
         }
 
-        if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
         {
-            rightMove = true;
+            if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
+            {   
+                //checks rotation of the ground object
+                if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
+                {
+                    forwardMove = true;
+                }
+
+                if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
+                {
+                    rightMove = true;
+                }
+
+                if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
+                {
+                    leftMove = true;
+                }
+
+                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
+                {
+                    upMove = true;
+                }
+
+                if (Input.GetKeyDown(spinInput))
+                {
+                    spinMove = true;
+                }
+            }
+            else if (hit.collider.CompareTag("Enemy"))// automatically jumps as bouncing of enemies seems fun and gives score maybe style points
+            {
+                // Call a function 
+                HandleTag1Object(hit.collider.gameObject);
+            }
+            else if (hit.collider.CompareTag("Death"))//if ontop of this you insta die e.g. pitfall or idk cthulhu
+            {
+                //playerlose()
+            }
         }
 
-        if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
-        {
-            leftMove = true;
-        }
 
-        if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
-        {
-            upMove = true;
-        }
-
-        if (Input.GetKeyDown(spinInput))
-        {
-            spinMove = true;
-        }
     }
 
     // physics actions based on user input are performed in fixed update
@@ -103,6 +131,12 @@ public class move : MonoBehaviour
             spinCoin(500);
             spinMove = false;
         }
+    }
+
+    private void HandleTag1Object(GameObject obj)
+    {
+        // Implement your logic for objects with Tag1 here
+        Debug.Log("Tag1 Object Detected: " + obj.name);
     }
 
     // Moves the coin, parameters of +1 or -1

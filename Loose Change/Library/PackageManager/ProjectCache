@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638293935429184858
+      ticks: 638293962804496434
     m_Hash: 2734339934
   m_LockFileStatus:
     m_FilePath: E:/Development/GitHub/LooseChange/Loose Change/Packages/packages-lock.json
@@ -13,14 +13,14 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638293935429184858
+      ticks: 638293962804496434
     m_Hash: 3381766640
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: E:/Development/GitHub/LooseChange/Loose Change/Packages
-m_EditorVersion: 2022.3.4f1 (35713cd46cd7)
+m_EditorVersion: 2022.3.3f1 (7cdc2969a641)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@2.0.5
   testable: 0
@@ -112,12 +112,14 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
+    - 2.1.0
     compatible:
     - 2.0.5
     - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
+    - 2.1.0
     recommended: 2.0.7
     deprecated: []
   dependencies: []
@@ -2915,10 +2917,12 @@ m_ResolvedPackages:
     - 2.0.17
     - 2.0.18
     - 2.0.20
+    - 2.0.21
     compatible:
     - 2.0.18
     - 2.0.20
-    recommended: 2.0.20
+    - 2.0.21
+    recommended: 2.0.21
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3019,9 +3023,11 @@ m_ResolvedPackages:
     - 3.0.21
     - 3.0.22
     - 3.0.24
+    - 3.0.25
     compatible:
     - 3.0.24
-    recommended: 3.0.24
+    - 3.0.25
+    recommended: 3.0.25
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
