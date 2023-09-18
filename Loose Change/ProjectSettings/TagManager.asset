@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Death
   - Enemy
+  - Hazard
   layers:
   - Default
   - TransparentFX

@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class move : MonoBehaviour
+public class Move : MonoBehaviour
 {
     Rigidbody rb;
     float currentAngle = 0; //current tilt
@@ -25,10 +27,17 @@ public class move : MonoBehaviour
     public float maxSpeed = 12; //INSPECTOR how fast is too fast
     public float jumpHeight = 700; //INSPECTOR how high to jump
 
-    public float playerCurrBalance = 0;
+    public float playerBalance = 0;
+    public int balanceDrain = 400;
     public float fallOverDegree = 60;
-
+    public float health = 100;//momentum
     public float raycastDistance = 1.0f;
+
+    public bool slippery = false;//perhaps if you go over slime you get a slippery debuff making you tilt faster
+
+    public Text momentumUI;
+    public Text balanceUI;
+
 
     // used between update and fixed update to ensure movement is not framerate reliant
     bool forwardMove = false;
@@ -42,23 +51,27 @@ public class move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
     }
 
     // Update is called once per frame
     // user input is detected in update
     void Update()
     {
-        if (playerCurrBalance <= -fallOverDegree || playerCurrBalance >= fallOverDegree)
-        {
-            //playerfalls and playerlose()
-            Debug.Log("YOU LOSE");
-        }
+        momentumUI.text = "Momentum: " + health;
+        balanceUI.text = "Balance: " + playerBalance;
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
-        {
+        {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
-            {   
+            {
+                if(health < 100)
+                {
+                    health += 0.01f;                    
+                }
+
+                balance(hit.collider.gameObject);
                 //checks rotation of the ground object
                 if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
                 {
@@ -86,13 +99,12 @@ public class move : MonoBehaviour
                 }
             }
             else if (hit.collider.CompareTag("Enemy"))// automatically jumps as bouncing of enemies seems fun and gives score maybe style points
-            {
-                // Call a function 
-                HandleTag1Object(hit.collider.gameObject);
+            {                
+                jumpCoin(jumpHeight);                
             }
-            else if (hit.collider.CompareTag("Death"))//if ontop of this you insta die e.g. pitfall or idk cthulhu
+            else if (hit.collider.CompareTag("Hazard"))//if ontop of this you insta die e.g. pitfall or idk cthulhu
             {
-                //playerlose()
+                HitHazard(hit.collider.gameObject);
             }
         }
 
@@ -133,10 +145,23 @@ public class move : MonoBehaviour
         }
     }
 
-    private void HandleTag1Object(GameObject obj)
+    private void HitHazard(GameObject hazard)
+    {        
+        Debug.Log("Object Detected: " + hazard.name);
+        hazard.GetComponent<Obstacle>().Hit();
+    }
+    private void balance(GameObject ground)
     {
-        // Implement your logic for objects with Tag1 here
-        Debug.Log("Tag1 Object Detected: " + obj.name);
+        
+        playerBalance += (ground.transform.rotation.eulerAngles.z-180)/balanceDrain;
+        
+
+        Debug.Log(playerBalance);
+        if (playerBalance <= -fallOverDegree || playerBalance >= fallOverDegree)
+        {
+            //playerfalls and playerlose()
+          //  Debug.Log("YOU LOSE");
+        }
     }
 
     // Moves the coin, parameters of +1 or -1
@@ -165,6 +190,7 @@ public class move : MonoBehaviour
         //Debug.Log("spinning");
         StartCoroutine(spinAttackCR());
     }
+
 
     // The spin attack visual coroutine
     IEnumerator spinAttackCR()
