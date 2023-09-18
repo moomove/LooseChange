@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 3438995988286836655}
   - component: {fileID: 4729279590457352433}
   - component: {fileID: 8020802685955747536}
+  - component: {fileID: 2304813994731793714}
   m_Layer: 0
   m_Name: little guy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632461331837396618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d92c56b52c6cd104092ed8d1f859f6fb, type: 3}
   m_Name: 
@@ -173,3 +174,21 @@ MonoBehaviour:
   TILT: 0
   SPIN: 0
   MOVE: 1
+--- !u!114 &2304813994731793714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632461331837396618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf2369d90be330428c6a96052dd1617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  tilt: 1
+  maxAngle: 50
+  minAngle: -50
+  maxSpeed: 12
+  jumpHeight: 700
