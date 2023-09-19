@@ -9,9 +9,13 @@ public class StartMenu : MonoBehaviour
     //used for spawning coins above menu
     private void Start() 
     {
-        UIOff();
-        UIOn(titleObjects);
-        UpdateHighScoreValues();
+        if (gameObject.name.Contains("kill"))
+        {
+            UIOff();
+            UIOn(titleObjects);
+            UpdateHighScoreValues();
+            StartCoroutine(MenuSpawner(coinTime));
+        }
     }
 
     public float coinTime;
@@ -76,6 +80,7 @@ public class StartMenu : MonoBehaviour
     //disable all UI elements
     void UIOff()
     {
+        Debug.Log("hid all");
         for (int j = 0; j <= highScoreObjects.Length-1; j++)
         {
             highScoreObjects[j].SetActive(false);
@@ -90,7 +95,8 @@ public class StartMenu : MonoBehaviour
     //activate all objects for a desired UI screen
     void UIOn(GameObject[] screen)
     {
-        UpdateHighScoreValues(); //update the high score screen to match relevant data
+        Debug.Log("added " + screen.Length);
+        //UpdateHighScoreValues(); //update the high score screen to match relevant data
         for (int j = 0; j < screen.Length; j++)
         {
             screen[j].SetActive(true);
