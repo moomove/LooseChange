@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\notes.cs" />
     <Compile Include="Assets\Scripts\move.cs" />
     <Compile Include="Assets\Scripts\StartMenu.cs" />
+    <Compile Include="Assets\Scripts\EndLevel.cs" />
     <Compile Include="Assets\Scripts\playerBalance.cs" />
   </ItemGroup>
   <ItemGroup>
