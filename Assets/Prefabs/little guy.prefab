@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4729279590457352433}
   - component: {fileID: 8020802685955747536}
   - component: {fileID: 2304813994731793714}
+  - component: {fileID: 8884649908390786352}
   m_Layer: 0
   m_Name: little guy
   m_TagString: Player
@@ -192,3 +193,27 @@ MonoBehaviour:
   minAngle: -50
   maxSpeed: 12
   jumpHeight: 700
+--- !u!114 &8884649908390786352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632461331837396618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b161c0c9aaeb44cb69f127a83f829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  tilt: 1
+  maxSpeed: 12
+  jumpHeight: 700
+  playerBalance: 0
+  balanceDrain: 400
+  fallOverDegree: 60
+  health: 100
+  raycastDistance: 1
+  slippery: 0
+  momentumUI: {fileID: 0}
+  balanceUI: {fileID: 0}
