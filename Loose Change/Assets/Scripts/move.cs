@@ -10,7 +10,6 @@ using UnityEngine.UIElements;
 public class move : MonoBehaviour
 {
     Rigidbody rb;
-    float currentAngle = 0; //current tilt
 
     KeyCode left1Input = KeyCode.A;
     KeyCode left2Input = KeyCode.LeftArrow;
@@ -108,7 +107,6 @@ public class move : MonoBehaviour
     // Moves the coin, parameters of +1 or -1
     void moveCoin(int direction)
     {
-        currentAngle = tilt * direction;
         gameObject.transform.Rotate(0, tilt * direction, 0);
     }
 
