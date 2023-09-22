@@ -62,6 +62,14 @@ public class Move : MonoBehaviour
         balanceUI.text = "Balance: " + playerBalance;
 
         RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, raycastDistance))
+        {
+            if (hit.collider.CompareTag("Enemy")|| hit.collider.CompareTag("Hazard"))
+            {
+                HitHazard(hit.collider.gameObject);
+            }
+        }
+
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
         {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
