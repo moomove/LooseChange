@@ -9,21 +9,38 @@ public class Obstacle : MonoBehaviour
     public bool slippery = false;   //applys the slippery debuff to player
     public float momentumLoss = 1;  //health/momentum loss when hit
 
-    public GameObject player;
-    private MoveUI move;
+    public string playerObject = "player";
+    private GameObject player;
+    private Move move;
 
     void Start()
     {
-        move = player.GetComponent<MoveUI>();
+        player = GameObject.Find(playerObject);
+
+        // Check if the object was found
+        if (player != null)
+        {
+            // You can now work with the foundObject
+            move = player.GetComponent<Move>();
+        }
+        else
+        {
+            Debug.LogError("Player Not Found");
+        }        
     }
     public void Hit()
     {        
         move.health -= momentumLoss;
+        //sound effect and explosion maybe
 
         if(move.health <= 0)
         {
             Debug.Log("YOULOSe");
             //gameOver()
+        }
+        else
+        {
+            DestroyObject(gameObject);//destroys self so coin continues on
         }
 
         if(slippery == true)
@@ -31,15 +48,6 @@ public class Obstacle : MonoBehaviour
             move.slippery=true;
         }
 
-        DestroyObject(gameObject);//destroys self so coin continues on
-    }
-
-    // Start is called before the first frame update
-
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }
