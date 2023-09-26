@@ -12,3 +12,6 @@ Loose Change/Library/ArtifactDB
 *.md
 *.cs
 *.meta
+*.json
+*.log
+*.pid
