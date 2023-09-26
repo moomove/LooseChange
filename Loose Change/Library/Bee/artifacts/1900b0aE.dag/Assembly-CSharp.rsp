@@ -360,7 +360,7 @@
 "Assets/Scripts/move.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/ScoreTracker.cs"
-"Assets/Scripts/Toggle.cs"
+"Assets/Scripts/toggle.cs"
 -langversion:9.0
 
 /deterministic

@@ -2,3 +2,13 @@
 [Ll]ibrary/
 [Tt]emp/
 [Ll]ogs/
+Loose Change/Library/ArtifactDB
+Loose Change/Library/ArtifactDB
+*.json
+*.dll
+*.meta
+*.yml
+*.md
+*.md
+*.cs
+*.meta

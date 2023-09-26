@@ -60,8 +60,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ScoreTracker.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\toggle.cs" />
     <Compile Include="Assets\Scripts\move.cs" />
-    <Compile Include="Assets\Scripts\Toggle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
