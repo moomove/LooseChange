@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638303045571212403
-    m_Hash: 2851439668
+      ticks: 638308575970177482
+    m_Hash: 2461947895
   m_LockFileStatus:
     m_FilePath: C:/Users/Amber/Documents/GitHub/LooseChange/Loose Change/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638303045571376652
-    m_Hash: 3954666414
+      ticks: 638308575970347735
+    m_Hash: 1798550755
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
