@@ -362,8 +362,11 @@
 "Assets/Scripts/EndLevel.cs"
 "Assets/Scripts/Move.cs"
 "Assets/Scripts/notes.cs"
+"Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/playerBalance.cs"
+"Assets/Scripts/ScoreTracker.cs"
 "Assets/Scripts/StartMenu.cs"
+"Assets/toggle.cs"
 -langversion:9.0
 
 /deterministic

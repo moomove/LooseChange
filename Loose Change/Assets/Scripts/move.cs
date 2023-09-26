@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class Move : MonoBehaviour
 {
     Rigidbody rb;
+    float currentAngle = 0; //current tilt
 
     KeyCode left1Input = KeyCode.A;
     KeyCode left2Input = KeyCode.LeftArrow;
@@ -21,10 +24,20 @@ public class Move : MonoBehaviour
 
     public float speed = 50; //INSPECTOR acceleration speed
     public float tilt = 1; //INSPECTOR how much to tilt on button press
-    public float maxAngle = 50; //INSPECTOR maximum tilt (right)
-    public float minAngle = -50; //INSPECTOR minimum tilt (left)
     public float maxSpeed = 12; //INSPECTOR how fast is too fast
     public float jumpHeight = 700; //INSPECTOR how high to jump
+
+    public float playerBalance = 0;
+    public int balanceDrain = 400;
+    public float fallOverDegree = 60;
+    public float health = 100;//momentum
+    public float raycastDistance = 1.0f;
+
+    public bool slippery = false;//perhaps if you go over slime you get a slippery debuff making you tilt faster
+
+    public Text momentumUI;
+    public Text balanceUI;
+
 
     // used between update and fixed update to ensure movement is not framerate reliant
     bool forwardMove = false;
@@ -47,36 +60,70 @@ public class Move : MonoBehaviour
     // user input is detected in update
     void Update()
     {
-        Debug.Log(coinAlive);
         if (!coinAlive)
         {
             return; //dont
         }
-        Debug.Log("running");
-        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
+
+        momentumUI.text = "Momentum: " + health;
+        balanceUI.text = "Balance: " + playerBalance;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, raycastDistance))
         {
-            forwardMove = true;
+            if (hit.collider.CompareTag("Enemy")|| hit.collider.CompareTag("Hazard"))
+            {
+                HitHazard(hit.collider.gameObject);
+            }
         }
 
-        if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
-        {
-            rightMove = true;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
+        {   
+            if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
+            {
+                if(health < 100)
+                {
+                    health += 0.01f;                    
+                }
+
+                balance(hit.collider.gameObject);
+                //checks rotation of the ground object
+                if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
+                {
+                    forwardMove = true;
+                }
+
+                if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
+                {
+                    rightMove = true;
+                }
+
+                if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
+                {
+                    leftMove = true;
+                }
+
+                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
+                {
+                    upMove = true;
+                }
+
+                if (Input.GetKeyDown(spinInput))
+                {
+                    spinMove = true;
+                }
+            }
+            else if (hit.collider.CompareTag("Enemy"))// automatically jumps as bouncing of enemies seems fun and gives score maybe style points
+            {                
+                jumpCoin(jumpHeight);                
+            }
+            else if (hit.collider.CompareTag("Hazard"))//if ontop of this you insta die e.g. pitfall or idk cthulhu
+            {
+                HitHazard(hit.collider.gameObject);
+            }
         }
 
-        if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
-        {
-            leftMove = true;
-        }
 
-        if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
-        {
-            upMove = true;
-        }
-
-        if (Input.GetKeyDown(spinInput))
-        {
-            spinMove = true;
-        }
     }
 
     // physics actions based on user input are performed in fixed update
@@ -86,7 +133,6 @@ public class Move : MonoBehaviour
         {
             //Debug.Log("moving forward! velocity is " + rb.velocity.magnitude);
             rb.AddRelativeForce(Vector3.forward * speed);
-            forwardMove = false;
         }
 
         if (rightMove)
@@ -114,9 +160,29 @@ public class Move : MonoBehaviour
         }
     }
 
+    private void HitHazard(GameObject hazard)
+    {        
+        Debug.Log("Object Detected: " + hazard.name);
+        hazard.GetComponent<Obstacle>().Hit();
+    }
+    private void balance(GameObject ground)
+    {
+        
+        playerBalance += (ground.transform.rotation.eulerAngles.z-180)/balanceDrain;
+        
+
+        Debug.Log(playerBalance);
+        if (playerBalance <= -fallOverDegree || playerBalance >= fallOverDegree)
+        {
+            //playerfalls and playerlose()
+          //  Debug.Log("YOU LOSE");
+        }
+    }
+
     // Moves the coin, parameters of +1 or -1
     void moveCoin(int direction)
     {
+        currentAngle = tilt * direction;
         gameObject.transform.Rotate(0, tilt * direction, 0);
     }
 
@@ -139,6 +205,7 @@ public class Move : MonoBehaviour
         //Debug.Log("spinning");
         StartCoroutine(spinAttackCR());
     }
+
 
     // The spin attack visual coroutine
     IEnumerator spinAttackCR()
