@@ -7,7 +7,7 @@ using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.UIElements;
 
-public class move : MonoBehaviour
+public class Move : MonoBehaviour
 {
     Rigidbody rb;
 
@@ -33,17 +33,26 @@ public class move : MonoBehaviour
     bool upMove = false;
     bool spinMove = false;
 
+    public bool coinAlive;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        coinAlive = true;
     }
 
     // Update is called once per frame
     // user input is detected in update
     void Update()
     {
+        Debug.Log(coinAlive);
+        if (!coinAlive)
+        {
+            return; //dont
+        }
+        Debug.Log("running");
         if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
         {
             forwardMove = true;
@@ -77,6 +86,7 @@ public class move : MonoBehaviour
         {
             //Debug.Log("moving forward! velocity is " + rb.velocity.magnitude);
             rb.AddRelativeForce(Vector3.forward * speed);
+            forwardMove = false;
         }
 
         if (rightMove)

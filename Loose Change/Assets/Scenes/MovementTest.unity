@@ -944,9 +944,10 @@ GameObject:
   - component: {fileID: 814541950}
   - component: {fileID: 814541951}
   - component: {fileID: 814541952}
+  - component: {fileID: 814541953}
   m_Layer: 0
   m_Name: little guy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1061,6 +1062,7 @@ MonoBehaviour:
   minAngle: -50
   maxSpeed: 85.1
   jumpHeight: 700
+  coinAlive: 1
 --- !u!65 &814541950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1101,7 +1103,6 @@ MonoBehaviour:
   - {fileID: 579108102}
   gameOverTitle: {fileID: 1325932435}
   gameWinTitle: {fileID: 1138614815}
-  TEMP: 0
 --- !u!114 &814541952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,6 +1119,23 @@ MonoBehaviour:
   objectArray: []
   highScoreObjects: []
   titleObjects: []
+--- !u!114 &814541953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814541943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba9c3e7becc470499329f4f7bb3573d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinMaterial: {fileID: 2100000, guid: a7feb68406cb0ae44a921cd2fc2b8676, type: 2}
+  numberOfFlashes: 0
+  minTransparency: 0
+  timeBetweenFlash: 0
+  enemyTag: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
