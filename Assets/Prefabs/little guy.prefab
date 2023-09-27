@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 413733077133435063}
   - component: {fileID: 3438995988286836655}
   - component: {fileID: 2304813994731793714}
+  - component: {fileID: 900571391879160722}
   m_Layer: 0
   m_Name: little guy
   m_TagString: Player
@@ -148,13 +149,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   tilt: 3
+  maxAngle: 50
+  minAngle: -50
   maxSpeed: 12
   jumpHeight: 700
-  playerBalance: 0
-  balanceDrain: 400
-  fallOverDegree: 60
-  health: 100
-  raycastDistance: 1
-  slippery: 0
-  momentumUI: {fileID: 0}
-  balanceUI: {fileID: 0}
+  coinAlive: 0
+--- !u!114 &900571391879160722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632461331837396618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb765a5cf8528ae47b4af63b7bcd625f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinMaterial: {fileID: 2100000, guid: a7feb68406cb0ae44a921cd2fc2b8676, type: 2}
+  numberOfFlashes: 2
+  minTransparency: 0
+  timeBetweenFlash: 0.5
+  enemyTag: 
