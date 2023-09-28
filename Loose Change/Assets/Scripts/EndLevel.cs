@@ -2,44 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class EndLevel : MonoBehaviour
 {
-    public GameObject[] UIelements; //all UI related to end of level except titles
+    public GameObject scoreText;
+    public GameObject scoreValue;
     public GameObject gameOverTitle;
     public GameObject gameWinTitle;
+    public GameObject nextButton;
+    public GameObject menuButton;
     StartMenu startMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         startMenu = GetComponent<StartMenu>();
-        for (int i = 0; i < UIelements.Length; i++) //turn off all ui
-        {
-            UIelements[i].gameObject.SetActive(false);
-        }
+        scoreText.SetActive(false);
+        scoreValue.SetActive(false);
         gameOverTitle.SetActive(false);
+        nextButton.SetActive(false);
+        menuButton.SetActive(false);
         gameWinTitle.SetActive(false);
     }
 
-    //score = end of game score / time = end of game time / title = game over OR game win title
-    public void GameEnd(int score, float time, GameObject title)
+    private void Update()
     {
-        // TODO stop player moving
-        for (int i = 0; i < UIelements.Length;i++)
+        if (Input.GetKey(KeyCode.G))
         {
-            UIelements[i].gameObject.SetActive(true);
-            if (UIelements[i].name.Contains("ScoreValue"))
-            {
-                UIelements[2].GetComponent<TextMeshProUGUI>().SetText(score.ToString());
-            }
-            else if (UIelements[i].name.Contains("TimeValue"))
-            {
-                UIelements[3].GetComponent<TextMeshProUGUI>().SetText(time.ToString());
-            }
+            GameEnd(0, "win");
         }
-        title.SetActive(true);
+    }
+
+    //score = end of game score / time = end of game time / title = game over OR game win title
+    public void GameEnd(int score, string title)
+    {
+        gameObject.GetComponent<Move>().coinAlive = false; //stop the coin's movement
+
+        GameObject titleObject;
+        if (title == "win")
+        {
+            titleObject = gameWinTitle;
+        }
+        else
+        {
+            titleObject = gameOverTitle;
+        }
+        // TODO stop player moving
+
+        scoreText.SetActive(true);
+        scoreValue.GetComponent<TextMeshProUGUI>().SetText(score.ToString()); //set score text to match player's achieved score
+        scoreValue.SetActive(true);
+        titleObject.SetActive(true);
         startMenu.SetHighScore(score); //for title high score screen
+        string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log(currentScene);
+        switch (currentScene)
+        {
+            case "Level01":
+                nextButton.SetActive(true);
+                break;
+            case "Level02":
+            default:
+                menuButton.SetActive(true);
+                break;
+        }
     }
 }

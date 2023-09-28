@@ -44,6 +44,7 @@ public class StartMenu : MonoBehaviour
     //change to a different scene
     public void SceneSwitcher(string scene) //INSPECTOR change scene based on input
     {
+        Debug.Log("opening " + scene);  
         SceneManager.LoadScene(scene);
     }
 

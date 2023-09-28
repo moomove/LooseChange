@@ -62,7 +62,7 @@ public class Move : MonoBehaviour
     {
         if (!coinAlive)
         {
-            return; //dont
+            return; 
         }
 
         momentumUI.text = "Momentum: " + health;
@@ -76,6 +76,8 @@ public class Move : MonoBehaviour
                 HitHazard(hit.collider.gameObject);
             }
         }
+
+        Debug.DrawLine(transform.position, Vector3.forward);
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
         {   
@@ -133,6 +135,7 @@ public class Move : MonoBehaviour
         {
             //Debug.Log("moving forward! velocity is " + rb.velocity.magnitude);
             rb.AddRelativeForce(Vector3.forward * speed);
+            forwardMove = false;
         }
 
         if (rightMove)
@@ -161,8 +164,8 @@ public class Move : MonoBehaviour
     }
 
     private void HitHazard(GameObject hazard)
-    {        
-        Debug.Log("Object Detected: " + hazard.name);
+    {
+        Debug.Log("Object Detected: ");// + hazard.name);
         hazard.GetComponent<Obstacle>().Hit();
     }
     private void balance(GameObject ground)
@@ -171,11 +174,10 @@ public class Move : MonoBehaviour
         playerBalance += (ground.transform.rotation.eulerAngles.z-180)/balanceDrain;
         
 
-        Debug.Log(playerBalance);
+        //Debug.Log(playerBalance);
         if (playerBalance <= -fallOverDegree || playerBalance >= fallOverDegree)
         {
-            //playerfalls and playerlose()
-          //  Debug.Log("YOU LOSE");
+            //gameObject.GetComponent<EndLevel>().GameEnd(score, "lose"); //TODO add some way to get the player's score
         }
     }
 
