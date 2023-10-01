@@ -46,6 +46,7 @@ public class Obstacle : MonoBehaviour
         }
 
         DestroyObject(gameObject);
+        //animate object disappearing if time permits
 
         if (slippery == true)
         {
@@ -54,4 +55,5 @@ public class Obstacle : MonoBehaviour
 
         
     }
+
 }

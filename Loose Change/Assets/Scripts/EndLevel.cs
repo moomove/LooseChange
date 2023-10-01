@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
@@ -15,10 +16,13 @@ public class EndLevel : MonoBehaviour
     public GameObject menuButton;
     StartMenu startMenu;
 
+    public bool gameWinObject = false; //INSPECTOR true if the object running this script is the end-of-level wall
+
     // Start is called before the first frame update
     void Start()
     {
-        startMenu = GetComponent<StartMenu>();
+        if (gameWinObject) startMenu = GameObject.FindWithTag("Player").GetComponent<StartMenu>();
+        else startMenu = GetComponent<StartMenu>();
         scoreText.SetActive(false);
         scoreValue.SetActive(false);
         gameOverTitle.SetActive(false);
@@ -27,18 +31,20 @@ public class EndLevel : MonoBehaviour
         gameWinTitle.SetActive(false);
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKey(KeyCode.G))
         {
             GameEnd(0, "win");
         }
-    }
+        
+    }*/
 
     //score = end of game score / time = end of game time / title = game over OR game win title
     public void GameEnd(int score, string title)
     {
-        gameObject.GetComponent<Move>().coinAlive = false; //stop the coin's movement
+        if (gameWinObject) GameObject.FindWithTag("Player").GetComponent<Move>().coinAlive = false; //if not the coin, get from coin
+        else gameObject.GetComponent<Move>().coinAlive = false; //if coin, stop movement
 
         GameObject titleObject;
         if (title == "win")
@@ -49,7 +55,7 @@ public class EndLevel : MonoBehaviour
         {
             titleObject = gameOverTitle;
         }
-        // TODO stop player moving
+        
 
         scoreText.SetActive(true);
         scoreValue.GetComponent<TextMeshProUGUI>().SetText(score.ToString()); //set score text to match player's achieved score
@@ -69,4 +75,16 @@ public class EndLevel : MonoBehaviour
                 break;
         }
     }
+
+    //if the player hits the end-of-level object, run the win UI
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (gameWinObject)
+        {
+            int score = (int)GameObject.FindWithTag("Player").GetComponent<ScoreTracker>().score; //get score before presenting it on game over screen and saving it to page
+            GameEnd(score, "win");
+        }
+    }
+
 }

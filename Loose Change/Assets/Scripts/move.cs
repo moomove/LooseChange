@@ -54,6 +54,24 @@ public class Move : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         coinAlive = true;
+
+        StartCoroutine(speedIncreaseCR(10, 1));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            int score = (int)gameObject.GetComponent<ScoreTracker>().score; //get score before presenting it on game over screen and saving it to page
+            Debug.Log("HIT side of something CALLED " + collision);
+            HitHazard(collision.gameObject); //remove damage
+            if (health > 0) gameObject.GetComponent<Damage>().CoinDamage(.4f, .4f, 8); //run damage flash
+            else
+            {
+                gameObject.GetComponent<Damage>().CoinDeath(); //run death 
+                gameObject.GetComponent<EndLevel>().GameEnd(score, "Lose"); 
+            }
+        }
     }
 
     // Update is called once per frame
@@ -69,43 +87,44 @@ public class Move : MonoBehaviour
         balanceUI.text = "Balance: " + playerBalance;
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, raycastDistance))
+        /*if (Physics.Raycast(transform.position, Vector3.forward, out hit, raycastDistance)) //FORWARD raycast
         {
-            if (hit.collider.CompareTag("Enemy")|| hit.collider.CompareTag("Hazard"))
+            Debug.Log("hit " + hit.collider.gameObject.name);
+            if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Hazard"))
             {
-                HitHazard(hit.collider.gameObject);
+                Debug.Log("HIT side of something CALLED " + hit.collider.gameObject.name);
+                HitHazard(hit.collider.gameObject); //remove damage
+                if (health > 0) gameObject.GetComponent<Damage>().CoinDamage(.4f, .4f, 8); //run damage flash
+                else gameObject.GetComponent<Damage>().CoinDeath(); //run death 
+                gameObject.GetComponent<EndLevel>().GameEnd(0, "Lose"); //TODO replace 0 with score value
             }
+        }*/
+                
+        if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
+        {
+            rightMove = true;
         }
 
-        Debug.DrawLine(transform.position, Vector3.forward);
-
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
+        if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
+        {
+            leftMove = true;
+        }
+        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
+        {
+            forwardMove = true;
+        }
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance)) //DOWNWARDS raycast
         {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
             {
                 if(health < 100)
                 {
-                    health += 0.01f;                    
+                    //health += 0.01f; //TODO this should be in fixed update 
                 }
 
-                balance(hit.collider.gameObject);
-                //checks rotation of the ground object
-                if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
-                {
-                    forwardMove = true;
-                }
+                balance(hit.collider.gameObject); //checks rotation of the ground object
 
-                if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
-                {
-                    rightMove = true;
-                }
-
-                if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
-                {
-                    leftMove = true;
-                }
-
-                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
+                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) 
                 {
                     upMove = true;
                 }
@@ -115,17 +134,22 @@ public class Move : MonoBehaviour
                     spinMove = true;
                 }
             }
-            else if (hit.collider.CompareTag("Enemy"))// automatically jumps as bouncing of enemies seems fun and gives score maybe style points
+            else if (hit.collider.CompareTag("Enemy"))// automatically jumps as bouncing off enemies seems fun and gives score maybe style points
             {                
                 jumpCoin(jumpHeight);                
             }
             else if (hit.collider.CompareTag("Hazard"))//if ontop of this you insta die e.g. pitfall or idk cthulhu
             {
-                HitHazard(hit.collider.gameObject);
+                Debug.Log("HIT top of something CALLED " + hit.collider.gameObject.name);
+                HitHazard(hit.collider.gameObject); //remove damage
+                if (health > 0) gameObject.GetComponent<Damage>().CoinDamage(.4f, .4f, 8); //run damage flash
+                else
+                {
+                    gameObject.GetComponent<Damage>().CoinDeath(); //run death 
+                    gameObject.GetComponent<EndLevel>().GameEnd(0, "Lose"); //TODO replace 0 with score value
+                }
             }
         }
-
-
     }
 
     // physics actions based on user input are performed in fixed update
@@ -166,7 +190,7 @@ public class Move : MonoBehaviour
     private void HitHazard(GameObject hazard)
     {
         Debug.Log("Object Detected: ");// + hazard.name);
-        hazard.GetComponent<Obstacle>().Hit();
+        if (!hazard.gameObject.CompareTag("Ground")) hazard.GetComponent<Obstacle>().Hit();
     }
     private void balance(GameObject ground)
     {
@@ -186,12 +210,6 @@ public class Move : MonoBehaviour
     {
         currentAngle = tilt * direction;
         gameObject.transform.Rotate(0, tilt * direction, 0);
-    }
-
-    // Called when the user moves left or right to apply the appropriate tilt and balance
-    void tiltCoin()
-    {
-        //TODO update coins tilt to match world
     }
 
     // Makes the coin jump upward
@@ -228,7 +246,8 @@ public class Move : MonoBehaviour
         while (true) //TODO update this to "while coin is alive/level is running" OR rely on stopcoroutine to end speed increase
         {
             maxSpeed += increaseValue; // increase max speed of coin //potentially update speed here too if friction is too much
-            //Debug.Log("max speed is " + maxSpeed + " and velocity is " + rb.velocity.magnitude);
+            speed += increaseValue; //increase total speed
+            Debug.Log("max speed is " + maxSpeed + " and velocity is " + rb.velocity.magnitude);
             yield return new WaitForSeconds(increaseTime);
         }
     }
