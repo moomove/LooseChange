@@ -17,6 +17,7 @@ public class EndLevel : MonoBehaviour
     StartMenu startMenu;
 
     public bool gameWinObject = false; //INSPECTOR true if the object running this script is the end-of-level wall
+    public bool gameLoseObject = false; //if the player hits the kill box
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,7 @@ public class EndLevel : MonoBehaviour
     //score = end of game score / time = end of game time / title = game over OR game win title
     public void GameEnd(int score, string title)
     {
-        if (gameWinObject) GameObject.FindWithTag("Player").GetComponent<Move>().coinAlive = false; //if not the coin, get from coin
+        if (gameWinObject || gameLoseObject) GameObject.FindWithTag("Player").GetComponent<Move>().coinAlive = false; //if not the coin, get from coin
         else gameObject.GetComponent<Move>().coinAlive = false; //if coin, stop movement
 
         GameObject titleObject;
@@ -79,11 +80,16 @@ public class EndLevel : MonoBehaviour
     //if the player hits the end-of-level object, run the win UI
     private void OnCollisionEnter(Collision collision)
     {
-        
+        Debug.Log("hit by " + collision.gameObject.name + " on " + gameObject.name);
         if (gameWinObject)
         {
             int score = (int)GameObject.FindWithTag("Player").GetComponent<ScoreTracker>().score; //get score before presenting it on game over screen and saving it to page
             GameEnd(score, "win");
+        }
+        if (gameLoseObject)
+        {
+            int score = (int)GameObject.FindWithTag("Player").GetComponent<ScoreTracker>().score; //get score before presenting it on game over screen and saving it to page
+            GameEnd(score, "lose");
         }
     }
 

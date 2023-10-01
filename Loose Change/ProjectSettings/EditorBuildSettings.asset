@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level02.unity
     guid: 8b625979c0eb875409a914c1f46dbd86
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstLevel.unity
     guid: 490edbe06422f334588351ba5b6a5009
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MovementTest.unity
     guid: 064ca7a2a06c79348852ae90b5082038
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/pipetest.unity
     guid: 25dc31dbef2055d4e823715204a99fd8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstLevel.unity
     guid: 490edbe06422f334588351ba5b6a5009
   m_configObjects: {}
