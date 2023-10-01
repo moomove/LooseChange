@@ -10613,6 +10613,10 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2304813994731793714, guid: 6f7955ea59cb15944a2e53834d0685bd, type: 3}
+      propertyPath: maxSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304813994731793714, guid: 6f7955ea59cb15944a2e53834d0685bd, type: 3}
       propertyPath: balanceUI
       value: 
       objectReference: {fileID: 2001999932}

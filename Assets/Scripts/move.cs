@@ -163,4 +163,17 @@ public class Move : MonoBehaviour
             yield return new WaitForSeconds(increaseTime);
         }
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.name.Contains("goop"))
+        {
+            Destroy(collision.gameObject); //Slow down the player as it touches the goop TODO
+        }        
+        
+        if (collision.gameObject.name.Contains("Hole"))
+        {
+            Destroy(gameObject); //Destroys the player when it touches the hole
+        }
+    }
 }

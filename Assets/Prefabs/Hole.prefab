@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3751249238548709095}
   - component: {fileID: 6765009416464873251}
   - component: {fileID: 4163000841863870613}
-  - component: {fileID: 3939889401587715250}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Hazard
@@ -100,25 +99,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3939889401587715250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257859154431387704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71938eb67873dc24890950ce0f9828e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  slippery: 0
-  momentumLoss: 1
-  playerObject: player
