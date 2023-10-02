@@ -28,7 +28,7 @@ public class Move : MonoBehaviour
     public float jumpHeight = 700; //INSPECTOR how high to jump
 
     public float playerBalance = 0;
-    public int balanceDrain = 400;
+    public int balanceDrain = 2000; //higher is slower
     public float fallOverDegree = 60;
     public float health = 100;//momentum
     public float raycastDistance = 1.0f;
@@ -37,6 +37,8 @@ public class Move : MonoBehaviour
 
     public Text momentumUI;
     public Text balanceUI;
+
+    public UnityEngine.UI.Slider balanceSlider = null;
 
 
     // used between update and fixed update to ensure movement is not framerate reliant
@@ -79,41 +81,40 @@ public class Move : MonoBehaviour
 
         Debug.DrawLine(transform.position, Vector3.forward);
 
+        if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
+        {
+            forwardMove = true;
+        }
+
+        if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
+        {
+            rightMove = true;
+        }
+
+        if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
+        {
+            leftMove = true;
+        }
+
+        if (Input.GetKeyDown(spinInput))
+        {
+            spinMove = true;
+        }
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
         {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
             {
-                if(health < 100)
+                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input))
+                {
+                    upMove = true;
+                }
+                if (health < 100)
                 {
                     health += 0.01f;                    
                 }
 
                 balance(hit.collider.gameObject);
                 //checks rotation of the ground object
-                if (Math.Abs(rb.velocity.x) < maxSpeed && Math.Abs(rb.velocity.z) < maxSpeed)
-                {
-                    forwardMove = true;
-                }
-
-                if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
-                {
-                    rightMove = true;
-                }
-
-                if (Input.GetKey(left1Input) || Input.GetKey(left2Input)) //same as D but negative
-                {
-                    leftMove = true;
-                }
-
-                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input)) //TODO stop player from jumping whilst they are in the air
-                {
-                    upMove = true;
-                }
-
-                if (Input.GetKeyDown(spinInput))
-                {
-                    spinMove = true;
-                }
             }
             else if (hit.collider.CompareTag("Enemy"))// automatically jumps as bouncing of enemies seems fun and gives score maybe style points
             {                
@@ -169,11 +170,14 @@ public class Move : MonoBehaviour
         hazard.GetComponent<Obstacle>().Hit();
     }
     private void balance(GameObject ground)
-    {
-        
-        playerBalance += (ground.transform.rotation.eulerAngles.z-180)/balanceDrain;
-        
+    {        
+        playerBalance += (ground.transform.rotation.eulerAngles.y-180)/balanceDrain;
 
+        if (balanceSlider != null)
+        {
+            balanceSlider.value = playerBalance;
+        }
+        
         //Debug.Log(playerBalance);
         if (playerBalance <= -fallOverDegree || playerBalance >= fallOverDegree)
         {

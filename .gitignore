@@ -1,7 +1,3 @@
-
-*.mvfrm
-*.dll
-*.rsp
-*.rsp2
-*.log
-*.dwlt
+Loose Change/Library/Bee/
+Loose Change/Temp/
+Loose Change/UserSettings/
