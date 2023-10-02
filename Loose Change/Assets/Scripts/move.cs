@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Scripting.APIUpdating;
@@ -34,6 +35,7 @@ public class Move : MonoBehaviour
     public float raycastDistance = 1.0f;
 
     public bool slippery = false;//perhaps if you go over slime you get a slippery debuff making you tilt faster
+    public float goopSlowTime;
 
     public Text momentumUI;
     public Text balanceUI;
@@ -71,6 +73,15 @@ public class Move : MonoBehaviour
                 gameObject.GetComponent<Damage>().CoinDeath(); //run death 
                 gameObject.GetComponent<EndLevel>().GameEnd(score, "Lose"); 
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Contains("Goop"))
+        {
+            Debug.Log("goop hit!");
+            StartCoroutine(GoopCR(goopSlowTime));
         }
     }
 
@@ -119,7 +130,7 @@ public class Move : MonoBehaviour
             {
                 if(health < 100)
                 {
-                    //health += 0.01f; //TODO this should be in fixed update 
+                    //health += 0.01f; 
                 }
 
                 balance(hit.collider.gameObject); //checks rotation of the ground object
@@ -251,4 +262,16 @@ public class Move : MonoBehaviour
             yield return new WaitForSeconds(increaseTime);
         }
     }
+
+    IEnumerator GoopCR(float slowTime)
+    {
+        rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y, rb.velocity.z / 2);
+        maxSpeed = maxSpeed / 2;
+        speed = speed / 2;
+        yield return new WaitForSeconds(slowTime);
+        maxSpeed = maxSpeed * 2;
+        speed = speed * 2;
+    }
+
+
 }
