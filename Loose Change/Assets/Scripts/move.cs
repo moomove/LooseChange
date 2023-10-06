@@ -29,7 +29,7 @@ public class Move : MonoBehaviour
     public float jumpHeight = 700; //INSPECTOR how high to jump
 
     public float playerBalance = 0;
-    public int balanceDrain = 400;
+    public int balanceDrain = 2000; //higher is slower
     public float fallOverDegree = 60;
     public float health = 100;//momentum
     public float raycastDistance = 1.0f;
@@ -39,6 +39,8 @@ public class Move : MonoBehaviour
 
     public Text momentumUI;
     public Text balanceUI;
+
+    public UnityEngine.UI.Slider balanceSlider = null;
 
 
     // used between update and fixed update to ensure movement is not framerate reliant
@@ -128,7 +130,11 @@ public class Move : MonoBehaviour
         {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
             {
-                if(health < 100)
+                if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input))
+                {
+                    upMove = true;
+                }
+                if (health < 100)
                 {
                     //health += 0.01f; 
                 }
@@ -204,11 +210,14 @@ public class Move : MonoBehaviour
         if (!hazard.gameObject.CompareTag("Ground")) hazard.GetComponent<Obstacle>().Hit();
     }
     private void balance(GameObject ground)
-    {
-        
-        playerBalance += (ground.transform.rotation.eulerAngles.z-180)/balanceDrain;
-        
+    {        
+        playerBalance += (ground.transform.rotation.eulerAngles.y-180)/balanceDrain;
 
+        if (balanceSlider != null)
+        {
+            balanceSlider.value = playerBalance;
+        }
+        
         //Debug.Log(playerBalance);
         if (playerBalance <= -fallOverDegree || playerBalance >= fallOverDegree)
         {
