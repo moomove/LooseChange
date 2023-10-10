@@ -100,7 +100,7 @@ public class Move : MonoBehaviour
         balanceUI.text = "Balance: " + playerBalance;
 
         RaycastHit hit;
-        /*if (Physics.Raycast(transform.position, Vector3.forward, out hit, raycastDistance)) //FORWARD raycast
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, raycastDistance)) //FORWARD raycast
         {
             Debug.Log("hit " + hit.collider.gameObject.name);
             if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Hazard"))
@@ -111,8 +111,9 @@ public class Move : MonoBehaviour
                 else gameObject.GetComponent<Damage>().CoinDeath(); //run death 
                 gameObject.GetComponent<EndLevel>().GameEnd(0, "Lose"); //TODO replace 0 with score value
             }
-        }*/
-                
+        }
+        Debug.DrawRay(transform.position, Vector3.forward, Color.green);
+
         if (Input.GetKey(right1Input) || Input.GetKey(right2Input))
         {
             rightMove = true;
@@ -126,10 +127,12 @@ public class Move : MonoBehaviour
         {
             forwardMove = true;
         }
+        
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance)) //DOWNWARDS raycast
         {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
             {
+                rb.useGravity = false;
                 if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input))
                 {
                     upMove = true;
@@ -166,6 +169,10 @@ public class Move : MonoBehaviour
                     gameObject.GetComponent<EndLevel>().GameEnd(0, "Lose"); //TODO replace 0 with score value
                 }
             }
+        }
+        else
+        {
+            rb.useGravity = true;
         }
     }
 

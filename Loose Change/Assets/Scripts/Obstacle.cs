@@ -10,8 +10,8 @@ public class Obstacle : MonoBehaviour
     public float momentumLoss = 1;  //health/momentum loss when hit
 
     public string playerObject = "player";
-    private GameObject player;
-    private Move move;
+    public GameObject player;
+    public Move move;
 
     void Start()
     {
