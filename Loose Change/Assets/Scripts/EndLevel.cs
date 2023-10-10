@@ -15,6 +15,7 @@ public class EndLevel : MonoBehaviour
     public GameObject nextButton;
     public GameObject menuButton;
     StartMenu startMenu;
+    public GameObject instructions;
 
     public bool gameWinObject = false; //INSPECTOR true if the object running this script is the end-of-level wall
     public bool gameLoseObject = false; //if the player hits the kill box
@@ -30,6 +31,21 @@ public class EndLevel : MonoBehaviour
         nextButton.SetActive(false);
         menuButton.SetActive(false);
         gameWinTitle.SetActive(false);
+        if (instructions != null)
+        {
+            instructions.SetActive(false); //in case of coroutine failure
+            StartCoroutine(instructionsCR());
+        }
+    }
+
+    //show instruction card for 5 seconds 
+    IEnumerator instructionsCR()
+    {
+        instructions.SetActive(false);
+        yield return new WaitForSeconds(.5f);
+        instructions.SetActive(true);
+        yield return new WaitForSeconds(5);
+        instructions.SetActive(false);
     }
 
     /*private void Update()

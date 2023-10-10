@@ -346,7 +346,7 @@
 "Assets/Scripts/Damage.cs"
 "Assets/Scripts/EndLevel.cs"
 "Assets/Scripts/GoopSlow.cs"
-"Assets/Scripts/Move.cs"
+"Assets/Scripts/move.cs"
 "Assets/Scripts/notes.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/playerBalance.cs"

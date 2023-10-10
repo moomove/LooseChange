@@ -5,9 +5,19 @@ using UnityEngine;
 public class ConstantMusic : MonoBehaviour
 {
     private AudioSource BackgroundMusic;
+    private static ConstantMusic constantMusic;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        if (constantMusic == null)
+        {
+            constantMusic = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         BackgroundMusic = GetComponent<AudioSource>();
         //PlayMusic();
         Debug.Log("playing on awake");

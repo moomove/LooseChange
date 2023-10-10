@@ -96,7 +96,7 @@ public class Move : MonoBehaviour
             return; 
         }
 
-        momentumUI.text = "Momentum: " + health;
+        momentumUI.text = "Health: " + health;
         balanceUI.text = "Balance: " + playerBalance;
 
         RaycastHit hit;
@@ -194,12 +194,14 @@ public class Move : MonoBehaviour
         if (upMove)
         {
             jumpCoin(jumpHeight);
+            Debug.Log("jumping UP");
             upMove = false;
         }
 
         if (spinMove)
         {
             spinCoin(500);
+            Debug.Log("spinning");
             spinMove = false;
         }
     }
