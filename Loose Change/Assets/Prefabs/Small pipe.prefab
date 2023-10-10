@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 441e33cf7dcb9924e8aefc06bf9ec03b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7064461902601350532}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 441e33cf7dcb9924e8aefc06bf9ec03b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3456057555557842207}
   m_SourcePrefab: {fileID: 100100000, guid: 441e33cf7dcb9924e8aefc06bf9ec03b, type: 3}
 --- !u!1 &8052870011642738006 stripped
 GameObject:
@@ -95,3 +98,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 441e33cf7dcb9924e8aefc06bf9ec03b, type: 3}
+--- !u!114 &3456057555557842207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052870011642738006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9911073117390c744868c4b65f1704e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  slippery: 0
+  momentumLoss: 20
+  playerObject: player
