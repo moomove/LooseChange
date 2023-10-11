@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Damage : MonoBehaviour
 {
@@ -13,6 +16,9 @@ public class Damage : MonoBehaviour
 
     public string enemyTag; //the tag assigned to all obstacles and enemies for ease of removal
 
+    public AudioSource deathSound;
+    public AudioSource damageSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,33 +26,26 @@ public class Damage : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
-        /*if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             CoinDamage(.3f, .5f, 8);
         }
         if (Input.GetKey(KeyCode.D))
         {
             CoinDeath();
-        }*/ 
-        //For testing purposes, uncomment to view damage and death behaviour
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        CoinDamage(timeBetweenFlash, minTransparency, numberOfFlashes);
-        if (collision.gameObject.tag == enemyTag)
-        {
-            Destroy(collision.gameObject); //TEMPORARY remove the object the player hit TODO
         }
-    }
+        //For testing purposes, uncomment to view damage and death behaviour
+    }*/
 
     //slows coin and makes it flash, to be called when coin hits an object
-    void CoinDamage(float timeBetweenFlash, float minTransparency, int numberOfFlashes)
+    public void CoinDamage(float timeBetweenFlash, float minTransparency, int numberOfFlashes)
     {
         StartCoroutine(CoinFlashCR(timeBetweenFlash, minTransparency, numberOfFlashes));
         rigidbody.velocity = new Vector3(rigidbody.velocity.x/2, rigidbody.velocity.y, rigidbody.velocity.z/2); //halve horizontal motion
+        damageSound.Play();
+
         //TODO subtract from health/momentum 
     }
 
@@ -68,9 +67,10 @@ public class Damage : MonoBehaviour
     }
 
     //stops the coin moving and plays death animation (to be added), to be called when momentum/health is 0
-    void CoinDeath()
+    public void CoinDeath()
     {
         //TODO play death animation OR manually fall over (change rotation)
+        deathSound.Play();
         GameObject.FindWithTag("Player").GetComponent<Move>().coinAlive = false;
         rigidbody.velocity = new Vector3(0, 0, 0);
         StartCoroutine(CoinFlashCR(.2f, .4f, 8)); //temporary, until we have death animation TODO

@@ -10,8 +10,8 @@ public class Obstacle : MonoBehaviour
     public float momentumLoss = 1;  //health/momentum loss when hit
 
     public string playerObject = "player";
-    private GameObject player;
-    private Move move;
+    public GameObject player;
+    public Move move;
 
     void Start()
     {
@@ -29,7 +29,8 @@ public class Obstacle : MonoBehaviour
         }        
     }
     public void Hit()
-    {        
+    {
+        Debug.Log("hit");
         move.health -= momentumLoss;
         //sound effect and explosion maybe
 
@@ -40,14 +41,19 @@ public class Obstacle : MonoBehaviour
         }
         else
         {
-            DestroyObject(gameObject);//destroys self so coin continues on
+            Debug.Log(gameObject);
+            //DestroyObject(gameObject);//destroys self so coin continues on
         }
 
-        if(slippery == true)
+        DestroyObject(gameObject);
+        //animate object disappearing if time permits
+
+        if (slippery == true)
         {
             move.slippery=true;
         }
 
         
     }
+
 }
