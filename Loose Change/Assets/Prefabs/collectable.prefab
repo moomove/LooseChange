@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 29980e2753138684cbdc2a760804557d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29980e2753138684cbdc2a760804557d, type: 3}
       propertyPath: m_LocalScale.x
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e274cbde92fbe44aeb40f28a34fc69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAdd: 100
   scoreUI: {fileID: 0}
 --- !u!82 &8703320616178202337
 AudioSource:

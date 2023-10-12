@@ -10,17 +10,17 @@ public class CollectableLogic : MonoBehaviour
     GameObject player;
     ScoreTracker scoreTracker;
     int scoreAdd = 100;
-    GameObject scoreUI;
+    public static GameObject scoreUI;
 
     // Start is called before the first frame update
     void Start()
     {
         scoreUI = GameObject.Find("CollectableScore");
-        scoreUI.SetActive(false);
         player = GameObject.FindWithTag("Player");
         scoreTracker = player.GetComponent<ScoreTracker>();
 
         StartCoroutine(spinCR(3, 0.02f, 2000000000));
+        scoreUI.GetComponent<TextMeshProUGUI>().SetText(" ");
     }
 
     // Update is called once per frame
@@ -54,9 +54,8 @@ public class CollectableLogic : MonoBehaviour
     IEnumerator scoreUICR(float timeToWait)
     {
         scoreUI.GetComponent<TextMeshProUGUI>().SetText("+" + scoreAdd);
-        scoreUI.SetActive(true);
         yield return new WaitForSeconds(timeToWait);
-        scoreUI.SetActive(false);
+        scoreUI.GetComponent<TextMeshProUGUI>().SetText(" ");
         Destroy(gameObject);
     }
 }
