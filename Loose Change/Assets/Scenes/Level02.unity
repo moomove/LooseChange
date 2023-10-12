@@ -633,6 +633,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &104264961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,6 +740,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &104616678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1083,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &173541265
 Mesh:
   m_ObjectHideFlags: 0
@@ -1833,6 +1839,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &303348613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1934,6 +1942,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &313408342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2258,6 +2268,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &341797894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 632461331837396618, guid: 6f7955ea59cb15944a2e53834d0685bd, type: 3}
@@ -2285,8 +2297,10 @@ MonoBehaviour:
   health: 100
   raycastDistance: 1
   slippery: 0
+  goopSlowTime: 0
   momentumUI: {fileID: 2116192971}
   balanceUI: {fileID: 1641989515}
+  balanceSlider: {fileID: 0}
   coinAlive: 0
 --- !u!114 &341797902
 MonoBehaviour:
@@ -2306,6 +2320,7 @@ MonoBehaviour:
   gameWinTitle: {fileID: 497623169}
   nextButton: {fileID: 1768183318}
   menuButton: {fileID: 1446385847}
+  instructions: {fileID: 0}
   gameWinObject: 0
   gameLoseObject: 0
 --- !u!114 &341797903
@@ -2546,6 +2561,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &458701739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +2904,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &497623169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,6 +3146,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &541124497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3227,6 +3248,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cb1bd8226b1e84640aa0d44b0dd55d97, type: 3}
+    - target: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212861938949972789, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212861938949972789, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212861938949972789, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212861938949972789, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cb1bd8226b1e84640aa0d44b0dd55d97, type: 3}
+    - target: {fileID: 6212861938949972789, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212861938949972789, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7156353455506605737, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -75
@@ -3238,6 +3307,14 @@ PrefabInstance:
     - target: {fileID: 7998290577604968712, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
       propertyPath: m_Name
       value: GameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491651667015367607, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 289.7317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491651667015367607, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 186.86584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3367,6 +3444,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &563645988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,6 +3686,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &646568209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3708,6 +3789,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &689122718
 Mesh:
   m_ObjectHideFlags: 0
@@ -3978,6 +4061,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &728399350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4071,6 +4156,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &733709444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4452,6 +4539,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &917737761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4557,6 +4646,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &944215142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4650,6 +4741,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &968256267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4755,6 +4848,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &992285028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4848,6 +4943,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1049436710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4941,6 +5038,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &1061508802
 Mesh:
   m_ObjectHideFlags: 0
@@ -5207,6 +5306,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1081252248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,6 +5544,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1098811260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5544,6 +5647,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1142932180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5649,6 +5754,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &1143234158
 Mesh:
   m_ObjectHideFlags: 0
@@ -5917,6 +6024,7 @@ MonoBehaviour:
   gameWinTitle: {fileID: 497623169}
   nextButton: {fileID: 1768183318}
   menuButton: {fileID: 1446385847}
+  instructions: {fileID: 0}
   gameWinObject: 1
   gameLoseObject: 0
 --- !u!1 &1146632365
@@ -6165,6 +6273,7 @@ MonoBehaviour:
   gameWinTitle: {fileID: 497623169}
   nextButton: {fileID: 1768183318}
   menuButton: {fileID: 1446385847}
+  instructions: {fileID: 0}
   gameWinObject: 0
   gameLoseObject: 1
 --- !u!1 &1173338968
@@ -6508,6 +6617,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1197101161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6609,6 +6720,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1236192270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6702,6 +6815,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &1244395416
 Mesh:
   m_ObjectHideFlags: 0
@@ -7066,6 +7181,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1445209527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7407,6 +7524,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1446385847
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,6 +7906,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &1641989515 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
@@ -8377,6 +8498,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1959028638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8482,6 +8605,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1965241957
 GameObject:
   m_ObjectHideFlags: 0
@@ -8823,6 +8948,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1970124414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9116,6 +9243,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &2018297028
 GameObject:
   m_ObjectHideFlags: 0
@@ -9337,6 +9466,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &2053865982
 Mesh:
   m_ObjectHideFlags: 0
@@ -9603,6 +9734,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &2097684656
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,3 +9987,5 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
