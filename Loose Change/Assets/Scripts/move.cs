@@ -96,7 +96,9 @@ public class Move : MonoBehaviour
             return; 
         }
 
-        momentumUI.text = "Momentum: " + health;
+        //Debug.Log("health is " + health);
+
+        momentumUI.text = "Health: " + health;
         balanceUI.text = "Balance: " + playerBalance;
 
         RaycastHit hit;
@@ -108,8 +110,11 @@ public class Move : MonoBehaviour
                 Debug.Log("HIT side of something CALLED " + hit.collider.gameObject.name);
                 HitHazard(hit.collider.gameObject); //remove damage
                 if (health > 0) gameObject.GetComponent<Damage>().CoinDamage(.4f, .4f, 8); //run damage flash
-                else gameObject.GetComponent<Damage>().CoinDeath(); //run death 
-                gameObject.GetComponent<EndLevel>().GameEnd(0, "Lose"); //TODO replace 0 with score value
+                else
+                {
+                    gameObject.GetComponent<Damage>().CoinDeath(); //run death 
+                    gameObject.GetComponent<EndLevel>().GameEnd(0, "Lose"); //TODO replace 0 with score value
+                }
             }
         }
         Debug.DrawRay(transform.position, Vector3.forward, Color.green);
@@ -214,7 +219,7 @@ public class Move : MonoBehaviour
     private void HitHazard(GameObject hazard)
     {
         Debug.Log("Object Detected: ");// + hazard.name);
-        if (!hazard.gameObject.CompareTag("Ground")) hazard.GetComponent<Obstacle>().Hit();
+        if (hazard.gameObject.CompareTag("Hazard") || hazard.gameObject.CompareTag("Enemy")) hazard.GetComponent<Obstacle>().Hit();
     }
     private void balance(GameObject ground)
     {        
@@ -250,19 +255,10 @@ public class Move : MonoBehaviour
     {
         jumpCoin(jumpHeight);
         //Debug.Log("spinning");
-        StartCoroutine(spinAttackCR());
+        //StartCoroutine(spinAttackCR(13, .004f, 83)); 
     }
 
 
-    // The spin attack visual coroutine
-    IEnumerator spinAttackCR()
-    {
-        for (int i = 0; i < 83; i++) //83 is 3 complete spins of 13 degrees
-        {
-            gameObject.transform.Rotate(0, 13, 0); //odd number to offset the coin's spin
-            yield return new WaitForSeconds(.004f);
-        }
-    }
 
     // Gradually increase the speed of the coin
     // increaseTime is the time between each increase
@@ -274,7 +270,7 @@ public class Move : MonoBehaviour
         {
             maxSpeed += increaseValue; // increase max speed of coin //potentially update speed here too if friction is too much
             speed += increaseValue; //increase total speed
-            Debug.Log("max speed is " + maxSpeed + " and velocity is " + rb.velocity.magnitude);
+            //Debug.Log("max speed is " + maxSpeed + " and velocity is " + rb.velocity.magnitude);
             yield return new WaitForSeconds(increaseTime);
         }
     }
@@ -288,6 +284,7 @@ public class Move : MonoBehaviour
         maxSpeed = maxSpeed * 2;
         speed = speed * 2;
     }
+
 
 
 }
