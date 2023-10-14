@@ -633,6 +633,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &104264961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,6 +740,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &104616678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1083,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &173541265
 Mesh:
   m_ObjectHideFlags: 0
@@ -1274,7 +1280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.78
+      value: 8.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1311,7 +1317,7 @@ PrefabInstance:
     - target: {fileID: -2792561654668199019, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51ab9a8b7840ee843a49f206c5ca7356, type: 2}
+      objectReference: {fileID: 2100000, guid: fe99f1e4d00f5254fbbb6506ece91398, type: 2}
     - target: {fileID: 919132149155446097, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
       propertyPath: m_Name
       value: propeller
@@ -1319,12 +1325,33 @@ PrefabInstance:
     - target: {fileID: 3343561085058537817, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51ab9a8b7840ee843a49f206c5ca7356, type: 2}
+      objectReference: {fileID: 2100000, guid: 7287d4b455cb87741ac7cc1253664eb7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 179081968}
   m_SourcePrefab: {fileID: 100100000, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
+--- !u!1 &179081967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 19c74de3cc6117a4c95160dddbe466b3, type: 3}
+  m_PrefabInstance: {fileID: 179081966}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &179081968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179081967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e390d6aa7d138964a91e6c4fc4c14981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1001 &181551977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1397,6 +1424,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 74f0083c23357d04b972d796e96f2b16, type: 2}
+    - target: {fileID: 2226504419838820387, guid: 56266daf2ce9eb44c99e3475957b0003, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a8e8cca1c3ecef44b0396ceb60e33f8, type: 2}
     - target: {fileID: 5680468040434832122, guid: 56266daf2ce9eb44c99e3475957b0003, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1833,6 +1864,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &303348613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1934,6 +1967,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &313408342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2258,6 +2293,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &341797894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 632461331837396618, guid: 6f7955ea59cb15944a2e53834d0685bd, type: 3}
@@ -2285,8 +2322,10 @@ MonoBehaviour:
   health: 100
   raycastDistance: 1
   slippery: 0
+  goopSlowTime: 0
   momentumUI: {fileID: 2116192971}
   balanceUI: {fileID: 1641989515}
+  balanceSlider: {fileID: 0}
   coinAlive: 0
 --- !u!114 &341797902
 MonoBehaviour:
@@ -2546,6 +2585,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &458701739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +2928,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &497623169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,6 +3170,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &541124497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3367,6 +3412,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &563645988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,6 +3654,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &646568209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3708,6 +3757,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &689122718
 Mesh:
   m_ObjectHideFlags: 0
@@ -3978,6 +4029,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &728399350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4071,6 +4124,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &733709444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4143,6 +4198,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 74f0083c23357d04b972d796e96f2b16, type: 2}
+    - target: {fileID: 2226504419838820387, guid: 56266daf2ce9eb44c99e3475957b0003, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a8e8cca1c3ecef44b0396ceb60e33f8, type: 2}
     - target: {fileID: 5680468040434832122, guid: 56266daf2ce9eb44c99e3475957b0003, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4452,6 +4511,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &917737761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4557,6 +4618,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &944215142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4650,6 +4713,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &968256267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4755,6 +4820,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &992285028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4848,6 +4915,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1049436710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4941,6 +5010,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &1061508802
 Mesh:
   m_ObjectHideFlags: 0
@@ -5207,6 +5278,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1081252248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,6 +5516,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1098811260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5544,6 +5619,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1142932180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5649,6 +5726,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &1143234158
 Mesh:
   m_ObjectHideFlags: 0
@@ -6508,6 +6587,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1197101161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6609,6 +6690,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1236192270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6702,6 +6785,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &1244395416
 Mesh:
   m_ObjectHideFlags: 0
@@ -7066,6 +7151,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1445209527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7407,6 +7494,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1446385847
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,6 +7876,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &1641989515 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5803185936129054958, guid: 65a93d9d3fd33734bbea84c9ed49859a, type: 3}
@@ -8271,6 +8362,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 74f0083c23357d04b972d796e96f2b16, type: 2}
+    - target: {fileID: 2226504419838820387, guid: 56266daf2ce9eb44c99e3475957b0003, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a8e8cca1c3ecef44b0396ceb60e33f8, type: 2}
     - target: {fileID: 5680468040434832122, guid: 56266daf2ce9eb44c99e3475957b0003, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8377,6 +8472,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1959028638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8482,6 +8579,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1965241957
 GameObject:
   m_ObjectHideFlags: 0
@@ -8823,6 +8922,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &1970124414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9116,6 +9217,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &2018297028
 GameObject:
   m_ObjectHideFlags: 0
@@ -9337,6 +9440,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!43 &2053865982
 Mesh:
   m_ObjectHideFlags: 0
@@ -9603,6 +9708,8 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 5
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &2097684656
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,3 +9961,5 @@ MonoBehaviour:
   slippery: 0
   momentumLoss: 10
   playerObject: player
+  player: {fileID: 0}
+  move: {fileID: 0}

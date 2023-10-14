@@ -3,7 +3,12 @@ guid: 4bec71db40732a5409d269421825c593
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Goop
+    second: {fileID: 2100000, guid: 2e2ab115501586346a63c9c5c87e1755, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
