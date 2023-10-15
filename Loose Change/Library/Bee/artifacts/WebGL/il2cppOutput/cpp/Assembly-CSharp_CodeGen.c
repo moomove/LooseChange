@@ -92,6 +92,9 @@ extern void Obstacle__ctor_mF400BC13FBAC15398D0EE2E05DF96F481257945D (void);
 extern void playerHazardBalance_Start_mAB75AF6853E89CAFC28941F3B66A1DB221D71354 (void);
 extern void playerHazardBalance_Update_m2A2D234D433663B640942DFED9F0EF3CAB177C35 (void);
 extern void playerHazardBalance__ctor_m5CB6F842328086F0B8197C8C4360059E7AC74212 (void);
+extern void propSpin_Start_mA91A01FFC4565134D3DD4D22C5C9A439A28BE144 (void);
+extern void propSpin_Update_mE5D9BF10337CED39875B7D6D06C579A2CA93DF08 (void);
+extern void propSpin__ctor_mEC68DAB719AD4E862DB834858A4A3818D219F7F1 (void);
 extern void ScoreTracker_Start_m5DFF32D133BC84BF83992350F93102FA71B7BBF4 (void);
 extern void ScoreTracker_FixedUpdate_m94C509C9A361B6C2267C53D778955ACD33984DD6 (void);
 extern void ScoreTracker_CollectCoin_m193CF0882FFA1AED4D6E2A9FAD8618E2D1A1F5D3 (void);
@@ -118,7 +121,7 @@ extern void toggle_Update_mCA9193C8DF7651EE3D69B759D47494905E9F9434 (void);
 extern void toggle__ctor_mF76BABF4CD752B88D6A5862E42D1F58B7F413FF5 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[106] = 
+static Il2CppMethodPointer s_methodPointers[109] = 
 {
 	CoinRepel_Start_m769D5B58E59271C9EA371857671C34792DAAEB96,
 	CoinRepel_OnCollisionEnter_m7DE7DA26B7FC5CD24BC706B61B37E75FBAEA5CD4,
@@ -200,6 +203,9 @@ static Il2CppMethodPointer s_methodPointers[106] =
 	playerHazardBalance_Start_mAB75AF6853E89CAFC28941F3B66A1DB221D71354,
 	playerHazardBalance_Update_m2A2D234D433663B640942DFED9F0EF3CAB177C35,
 	playerHazardBalance__ctor_m5CB6F842328086F0B8197C8C4360059E7AC74212,
+	propSpin_Start_mA91A01FFC4565134D3DD4D22C5C9A439A28BE144,
+	propSpin_Update_mE5D9BF10337CED39875B7D6D06C579A2CA93DF08,
+	propSpin__ctor_mEC68DAB719AD4E862DB834858A4A3818D219F7F1,
 	ScoreTracker_Start_m5DFF32D133BC84BF83992350F93102FA71B7BBF4,
 	ScoreTracker_FixedUpdate_m94C509C9A361B6C2267C53D778955ACD33984DD6,
 	ScoreTracker_CollectCoin_m193CF0882FFA1AED4D6E2A9FAD8618E2D1A1F5D3,
@@ -227,7 +233,7 @@ static Il2CppMethodPointer s_methodPointers[106] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[106] = 
+static const int32_t s_InvokerIndices[109] = 
 {
 	5531,
 	4466,
@@ -311,6 +317,9 @@ static const int32_t s_InvokerIndices[106] =
 	5531,
 	5531,
 	5531,
+	5531,
+	5531,
+	5531,
 	4438,
 	4438,
 	5531,
@@ -340,7 +349,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	106,
+	109,
 	s_methodPointers,
 	0,
 	NULL,
