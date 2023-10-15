@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/kaidenlevelmerge/Level02.unity
+=======
+- path: Assets/Scenes/Level02.unity
+>>>>>>> 1adef0dbbad958f694530ec9c77a0b425ef971af
   isLoaded: 1
   isActive: 1
   isSubScene: 0

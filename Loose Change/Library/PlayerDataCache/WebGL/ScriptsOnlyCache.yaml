@@ -10,6 +10,8 @@ ScriptsOnlyBuild:
     - ScoreTracker
     - StartMenu
     - notes
+    - propSpin
+    - toggle
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -187,27 +189,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5378}
     - Class: 114
-      Script: {instanceID: 5722}
+      Script: {instanceID: 5724}
     - Class: 114
-      Script: {instanceID: 5794}
+      Script: {instanceID: 5796}
     - Class: 114
-      Script: {instanceID: 6020}
+      Script: {instanceID: 6022}
     - Class: 114
-      Script: {instanceID: 6080}
+      Script: {instanceID: 6082}
     - Class: 114
-      Script: {instanceID: 6406}
+      Script: {instanceID: 6408}
     - Class: 114
-      Script: {instanceID: 6452}
+      Script: {instanceID: 6454}
     - Class: 114
-      Script: {instanceID: 6626}
+      Script: {instanceID: 6628}
     - Class: 114
-      Script: {instanceID: 6682}
+      Script: {instanceID: 6684}
     - Class: 114
-      Script: {instanceID: 7784}
+      Script: {instanceID: 7786}
     - Class: 114
-      Script: {instanceID: 8682}
+      Script: {instanceID: 8684}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 28466}
+=======
+      Script: {instanceID: 27450}
+>>>>>>> 1adef0dbbad958f694530ec9c77a0b425ef971af
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -292,23 +298,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5378}
     - Class: 114
-      Script: {instanceID: 5794}
+      Script: {instanceID: 5452}
     - Class: 114
-      Script: {instanceID: 6020}
+      Script: {instanceID: 5796}
     - Class: 114
-      Script: {instanceID: 6080}
+      Script: {instanceID: 6022}
     - Class: 114
-      Script: {instanceID: 6406}
+      Script: {instanceID: 6082}
     - Class: 114
-      Script: {instanceID: 6452}
+      Script: {instanceID: 6408}
     - Class: 114
-      Script: {instanceID: 6626}
+      Script: {instanceID: 6454}
     - Class: 114
-      Script: {instanceID: 6682}
+      Script: {instanceID: 6628}
     - Class: 114
-      Script: {instanceID: 7784}
+      Script: {instanceID: 6684}
     - Class: 114
-      Script: {instanceID: 8682}
+      Script: {instanceID: 7786}
+    - Class: 114
+      Script: {instanceID: 8684}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -391,15 +399,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4954}
     - Class: 114
-      Script: {instanceID: 5794}
+      Script: {instanceID: 5796}
     - Class: 114
-      Script: {instanceID: 6020}
+      Script: {instanceID: 6022}
     - Class: 114
-      Script: {instanceID: 6626}
+      Script: {instanceID: 6628}
     - Class: 114
-      Script: {instanceID: 7490}
+      Script: {instanceID: 7492}
     - Class: 114
-      Script: {instanceID: 7944}
+      Script: {instanceID: 7946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -478,25 +486,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5378}
     - Class: 114
-      Script: {instanceID: 5794}
+      Script: {instanceID: 5796}
     - Class: 114
-      Script: {instanceID: 6020}
+      Script: {instanceID: 6022}
     - Class: 114
-      Script: {instanceID: 6080}
+      Script: {instanceID: 6082}
     - Class: 114
-      Script: {instanceID: 6406}
+      Script: {instanceID: 6408}
     - Class: 114
-      Script: {instanceID: 6452}
+      Script: {instanceID: 6454}
     - Class: 114
-      Script: {instanceID: 6626}
+      Script: {instanceID: 6628}
     - Class: 114
-      Script: {instanceID: 6682}
+      Script: {instanceID: 6684}
     - Class: 114
-      Script: {instanceID: 7784}
+      Script: {instanceID: 7786}
     - Class: 114
-      Script: {instanceID: 8682}
+      Script: {instanceID: 8684}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 24820}
+=======
+      Script: {instanceID: 32858}
+>>>>>>> 1adef0dbbad958f694530ec9c77a0b425ef971af
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1242,6 +1254,12 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
+      Hash: 0a5038fcea19ab5596f4e059fab08b35
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: propSpin
+  - hash:
+      serializedVersion: 2
       Hash: e44c1964aad6fb40563573cf6608be1c
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1870,4 +1888,8 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level01.unity
   - Assets/Scenes/Level02.unity
   - Assets/Scenes/TutorialLevel.unity
+<<<<<<< HEAD
   playerPath: C:/Users/Amber/Desktop/uni/KIT207 - Games/group project/finalbuilds/build5
+=======
+  playerPath: C:/Users/willr/Documents/Uni/kit207/Build
+>>>>>>> 1adef0dbbad958f694530ec9c77a0b425ef971af
