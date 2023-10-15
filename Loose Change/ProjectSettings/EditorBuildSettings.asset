@@ -14,16 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level02.unity
     guid: 8b625979c0eb875409a914c1f46dbd86
-  - enabled: 0
-    path: Assets/Scenes/FirstLevel.unity
-    guid: 490edbe06422f334588351ba5b6a5009
-  - enabled: 0
-    path: Assets/Scenes/MovementTest.unity
-    guid: 064ca7a2a06c79348852ae90b5082038
-  - enabled: 0
-    path: Assets/Scenes/pipetest.unity
-    guid: 25dc31dbef2055d4e823715204a99fd8
-  - enabled: 0
-    path: Assets/Scenes/FirstLevel.unity
-    guid: 490edbe06422f334588351ba5b6a5009
+  - enabled: 1
+    path: Assets/Scenes/TutorialLevel.unity
+    guid: e2bc72fdce9aec44db79e4e2fb6b3ea8
   m_configObjects: {}
