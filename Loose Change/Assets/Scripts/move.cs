@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Scripting.APIUpdating;
@@ -137,7 +136,7 @@ public class Move : MonoBehaviour
         {   
             if (hit.collider.CompareTag("Ground")) //checks if player is on ground and allows movment
             {
-                rb.useGravity = false;
+                //rb.useGravity = false; 
                 if (Input.GetKeyDown(up1Input) || Input.GetKeyDown(up2Input))
                 {
                     upMove = true;
