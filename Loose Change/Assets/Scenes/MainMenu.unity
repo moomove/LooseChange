@@ -1709,8 +1709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinTime: 0.66
   objectArray:
-  - {fileID: 7125470755908766131, guid: 147cecc9d9afe904496eb1fc1abcb8a8, type: 3}
-  - {fileID: 1486074854713478210, guid: 3782f9f43d8935f479a65d3fcc249506, type: 3}
+  - {fileID: 901606733176902373, guid: 28bc372d627c1c74893d32f4f8a17b54, type: 3}
+  - {fileID: 1486074854713478210, guid: cac547f5a2ae2d340903b082c4e6dd22, type: 3}
+  - {fileID: 1486074854713478210, guid: cac547f5a2ae2d340903b082c4e6dd22, type: 3}
   highScoreObjects:
   - {fileID: 52883664}
   - {fileID: 1319011769}
