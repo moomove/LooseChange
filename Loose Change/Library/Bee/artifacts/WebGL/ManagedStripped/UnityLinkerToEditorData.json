@@ -72,10 +72,7 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -83,10 +80,7 @@
           {
             "name": "AudioClip",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -94,10 +88,7 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -111,10 +102,7 @@
           {
             "name": "AudioSource",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -122,10 +110,7 @@
           {
             "name": "SampleClip",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -156,10 +141,7 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -179,10 +161,7 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -202,10 +181,7 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -219,10 +195,7 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -248,51 +221,26 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 1,
             "icon": null
           },
           {
             "name": "Light",
-            "scenes": [
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "LightProbes",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "LightingSettings",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "LightmapSettings",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -305,10 +253,7 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -316,10 +261,7 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -327,10 +269,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -338,10 +277,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -349,10 +285,7 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -364,23 +297,9 @@
             "icon": null
           },
           {
-            "name": "MonoScript",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
-            "dependencyType": 1,
-            "icon": null
-          },
-          {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -411,12 +330,7 @@
           },
           {
             "name": "RectTransform",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -429,10 +343,7 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -464,10 +375,7 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -479,15 +387,6 @@
             "icon": null
           },
           {
-            "name": "SkinnedMeshRenderer",
-            "scenes": [
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
             "name": "SortingGroup",
             "scenes": [],
             "dependencyType": 0,
@@ -495,9 +394,7 @@
           },
           {
             "name": "Sprite",
-            "scenes": [
-              "Assets/Scenes/Level01.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -522,7 +419,7 @@
           {
             "name": "TextAsset",
             "scenes": [],
-            "dependencyType": 1,
+            "dependencyType": 0,
             "icon": null
           },
           {
@@ -557,8 +454,10 @@
           },
           {
             "name": "Transform",
-            "scenes": [],
-            "dependencyType": 1,
+            "scenes": [
+              "Assets/Scenes/Level01.unity"
+            ],
+            "dependencyType": 0,
             "icon": null
           },
           {
@@ -803,10 +702,7 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -820,20 +716,7 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "PhysicMaterial",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -847,10 +730,7 @@
           {
             "name": "Rigidbody",
             "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
+              "Assets/Scenes/Level01.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1102,12 +982,7 @@
         "dependencies": [
           {
             "name": "Font",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -1148,12 +1023,7 @@
         "dependencies": [
           {
             "name": "Canvas",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -1165,12 +1035,7 @@
           },
           {
             "name": "CanvasRenderer",
-            "scenes": [
-              "Assets/Scenes/Level01.unity",
-              "Assets/Scenes/Level02.unity",
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/TutorialLevel.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },

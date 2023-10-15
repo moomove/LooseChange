@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
 {
     public float health = 1;        //player momentum/health required to destroy
     public bool slippery = false;   //applys the slippery debuff to player
-    public float momentumLoss = 1;  //health/momentum loss when hit
+    public float momentumLoss = 10;  //health/momentum loss when hit
 
     public string playerObject = "player";
     public GameObject player;
