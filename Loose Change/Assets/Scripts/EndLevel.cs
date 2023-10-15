@@ -87,6 +87,9 @@ public class EndLevel : MonoBehaviour
                 nextButton.SetActive(true);
                 break;
             case "Level02":
+                nextButton.SetActive(true);
+                break;
+            case "Level03":
             default:
                 menuButton.SetActive(true);
                 break;
