@@ -1883,6 +1883,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_BoundingVolume
       value: 
       objectReference: {fileID: 1623040072}
@@ -1894,6 +1898,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 57537716}
+    - target: {fileID: 2347719253348011455, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2347719253348011455, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_Priority
       value: 5
@@ -10430,6 +10438,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_BoundingVolume
       value: 
       objectReference: {fileID: 566348465}
@@ -10441,6 +10453,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 57537716}
+    - target: {fileID: 2347719253348011455, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2347719253348011455, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_Priority
       value: 5
@@ -10644,6 +10660,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_BoundingVolume
       value: 
       objectReference: {fileID: 32502962}
@@ -10655,6 +10675,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 57537716}
+    - target: {fileID: 2347719253348011455, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2347719253348011455, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_Priority
       value: 5
@@ -10693,7 +10717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8883822774576813083, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00076937006
+      value: 0.0007693701
       objectReference: {fileID: 0}
     - target: {fileID: 8883822774576813083, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10733,6 +10757,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 864214594172747485, guid: ef5aa56b31350854ca01c56a9553a8ce, type: 3}
       propertyPath: m_BoundingVolume
       value: 
